@@ -13,7 +13,7 @@ const { Meta } = Card
 const Home = () => {
 	const { data } = useDishesQuery()
 
-	const dishes = data?.data.records.filter(x => x.FOTO_PIATTO)
+	const dishes = data.records.filter(x => x.FOTO_PIATTO)
 
 	return (
 		<ContainerDishes>

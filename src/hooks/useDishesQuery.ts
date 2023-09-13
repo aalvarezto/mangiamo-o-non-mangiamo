@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useQuery } from "@tanstack/react-query"
+import { data as response } from "./data"
 
 interface IDish {
 	ID_PIATTO: string
@@ -26,7 +27,7 @@ const useDishesQuery = () => {
 			axios.get<{ records: IDish[] }>("http://localhost:3000/data"),
 	})
 
-	return { data }
+	return { data: response as any as { records: IDish[] } }
 }
 
 export default useDishesQuery
